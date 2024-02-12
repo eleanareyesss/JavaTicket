@@ -1266,7 +1266,9 @@ public class JavaTicket extends javax.swing.JFrame {
             .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        EditartodosElementos.setMaximumSize(new java.awt.Dimension(875, 610));
         EditartodosElementos.setMinimumSize(new java.awt.Dimension(875, 610));
+        EditartodosElementos.setPreferredSize(new java.awt.Dimension(875, 610));
 
         jPanel8.setMaximumSize(new java.awt.Dimension(875, 610));
         jPanel8.setMinimumSize(new java.awt.Dimension(875, 610));
@@ -1323,6 +1325,11 @@ public class JavaTicket extends javax.swing.JFrame {
         edadTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 edadTextFieldActionPerformed(evt);
+            }
+        });
+        edadTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                edadTextFieldKeyTyped(evt);
             }
         });
         jPanel8.add(edadTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 270, 128, 40));
@@ -2132,6 +2139,11 @@ public class JavaTicket extends javax.swing.JFrame {
         codigoIngresadoTF.setBackground(new java.awt.Color(255, 255, 255));
         codigoIngresadoTF.setFont(new java.awt.Font("Ebrima", 1, 24)); // NOI18N
         codigoIngresadoTF.setForeground(new java.awt.Color(0, 0, 0));
+        codigoIngresadoTF.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                codigoIngresadoTFKeyTyped(evt);
+            }
+        });
         jPanel15.add(codigoIngresadoTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, 220, 40));
 
         jButton14.setBackground(new java.awt.Color(255, 208, 208));
@@ -5872,7 +5884,38 @@ public class JavaTicket extends javax.swing.JFrame {
                     // Verificar si el evento está cancelado antes de mostrar la información
                     if (evento.isEventoCancelado()) {
                         JOptionPane.showMessageDialog(null, "El evento ha sido cancelado\n" + evento.datosCancelados());
-                        return; // No mostrar más información si el evento está cancelado y la multa pagada.
+                        DefaultTableModel model;    
+                        if (searchEvento(codigo) instanceof EventoDeportivo) {
+                        IngresarCodigoVerEvento.setVisible(false);
+                        VerEventoDeportivo.setVisible(true);
+                        VerEventoDeportivo.setResizable(false);
+                        VerEventoDeportivo.setLocationRelativeTo(null);
+                        VerEventoDeportivo.pack();
+                        codigoIngresadoVerEvento.setText("");
+                        model = (DefaultTableModel) tablaEventoDeportivo.getModel();
+                        model.setRowCount(0);
+                        llenarEventoDeportivo((EventoDeportivo) eventosCreados.get(pos));
+                    } else if (searchEvento(codigo) instanceof EventoMusical) {
+                        IngresarCodigoVerEvento.setVisible(false);
+                        VerEventoMusical.setVisible(true);
+                        VerEventoMusical.setResizable(false);
+                        VerEventoMusical.setLocationRelativeTo(null);
+                        VerEventoMusical.pack();
+                        codigoIngresadoVerEvento.setText("");
+                        model = (DefaultTableModel) tablaEventoMusical.getModel();
+                        model.setRowCount(0);
+                        llenarEventoMusical((EventoMusical) eventosCreados.get(pos));
+                    } else if (searchEvento(codigo) instanceof EventoReligioso) {
+                        IngresarCodigoVerEvento.setVisible(false);
+                        VerEventoReligioso.setVisible(true);
+                        VerEventoReligioso.setResizable(false);
+                        VerEventoReligioso.setLocationRelativeTo(null);
+                        VerEventoReligioso.pack();
+                        codigoIngresadoVerEvento.setText("");
+                        model = (DefaultTableModel) tablaEventoReligioso.getModel();
+                        model.setRowCount(0);
+                        llenarEventoReligioso((EventoReligioso) eventosCreados.get(pos));
+                    }
                     }
 
                     DefaultTableModel model;
@@ -6922,6 +6965,22 @@ public class JavaTicket extends javax.swing.JFrame {
         Reportes.setResizable(false);
         Reportes.pack();
     }//GEN-LAST:event_jButton60ActionPerformed
+
+    private void edadTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_edadTextFieldKeyTyped
+        int tecla = evt.getKeyChar();
+        boolean valido = tecla >= 48 && tecla <= 57;
+        if(!valido){
+            evt.consume();
+        }
+    }//GEN-LAST:event_edadTextFieldKeyTyped
+
+    private void codigoIngresadoTFKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_codigoIngresadoTFKeyTyped
+        int tecla = evt.getKeyChar();
+        boolean valido = tecla >= 48 && tecla <= 57;
+        if(!valido){
+            evt.consume();
+        }
+    }//GEN-LAST:event_codigoIngresadoTFKeyTyped
 
     //Funcion Recursiva
     private  Evento searchEvento(int codigo, int i){
