@@ -4709,6 +4709,135 @@ public class JavaTicket extends javax.swing.JFrame {
         if (pos != -1) {
             Evento evento = eventosCreados.get(pos);
             
+            if (evento instanceof EventoDeportivo) {
+                EventoDeportivo eventoDeportivo = (EventoDeportivo) evento;
+
+                //MOSTRAR LA INFORMACIÓN
+                String deporteSeleccionado = eventoDeportivo.getDeporte().toString();
+                DefaultComboBoxModel<String> model = (DefaultComboBoxModel<String>) edicionTipoDeporte.getModel();
+                
+                model.setSelectedItem(deporteSeleccionado);
+                
+                edicionCodigo.setText(String.valueOf(evento.getCodigo()));
+                edicionTitulo.setText(evento.getTituloEvento());
+                edicionDescripcion.setText(evento.getDescripcion());
+                edicionFecha.setDate(evento.getFechaEvento());
+                edicionMonto.setText(String.valueOf(evento.getMontoRenta()));
+                edicionGente.setText(String.valueOf(eventoDeportivo.getCantidadGente()));
+                edicionEquipo1.setText(eventoDeportivo.getEquipo1());
+                edicionEquipo2.setText(eventoDeportivo.getEquipo2());
+                
+                listaEquipo1.setModel(new DefaultListModel());
+                for (String jugador : eventoDeportivo.getListadoJugadores1()) {
+                ((DefaultListModel) listaEquipo1.getModel()).addElement(jugador);
+                }
+                listaEquipo2.setModel(new DefaultListModel());
+                for (String jugador : eventoDeportivo.getListadoJugadores2()) {
+                ((DefaultListModel) listaEquipo2.getModel()).addElement(jugador);
+                }
+                
+                //INICIAR
+                EditarEventoDeportivo.setVisible(true);
+                EditarEventoDeportivo.setResizable(false);
+                EditarEventoDeportivo.setLocationRelativeTo(null);
+                EditarEventoDeportivo.pack();
+                codigoIngresadoTF.setText("");
+                IngresarCodigoEvento.setVisible(false);
+                
+                //HABILITAR
+                edicionTitulo.setEditable(true);
+                edicionFecha.setEnabled(true);
+                edicionGente.setEditable(true);
+                jugadorIngresado1.setEditable(true);
+                jugadorIngresado2.setEditable(true);
+                edicionMonto.setEditable(true);
+                edicionEquipo1.setEditable(true);
+                edicionEquipo2.setEditable(true);
+                edicionTipoDeporte.setEnabled(true);
+                agregarEquipo1.setEnabled(true);
+                agregarEquipo2.setEnabled(true);
+                borrarEquipo1.setEnabled(true);
+                borrarEquipo2.setEnabled(true);
+                edicionDescripcion.setEditable(true);
+                jButton16.setEnabled(true);
+                
+            } else if (eventosCreados.get(pos) instanceof EventoMusical) {
+                EventoMusical eventoMusical = (EventoMusical) evento;
+                
+                //MOSTRAR LA INFORMACIÓN
+                String musicaSeleccionada = eventoMusical.getTipoMusica().toString();
+                DefaultComboBoxModel<String> model = (DefaultComboBoxModel<String>) edicionTipoMusica.getModel();
+                
+                model.setSelectedItem(musicaSeleccionada);
+                
+                edicionTituloMusical.setText(evento.getTituloEvento());
+                edicionCodigoMusical.setText(String.valueOf(evento.getCodigo()));
+                edicionDescripcionMusical.setText(evento.getDescripcion());
+                edicionFechaMusical.setDate(evento.getFechaEvento());
+                edicionMontoMusical.setText(String.valueOf(evento.getMontoRenta()));
+                edicionGenteMusical.setText(String.valueOf(eventoMusical.getCantidadGente()));
+                jTextField4.setText(String.valueOf(eventoMusical.getSeguro()));
+                
+                listaMusicos.setModel(new DefaultListModel());
+                for (String musico : eventoMusical.getListadoEquipoMusical()) {
+                ((DefaultListModel) listaMusicos.getModel()).addElement(musico);
+                }
+                
+                //INICIAR
+                EditarEventoMusical.setVisible(true);
+                EditarEventoMusical.setResizable(false);
+                EditarEventoMusical.setLocationRelativeTo(null);
+                EditarEventoMusical.pack();
+                codigoIngresadoTF.setText("");
+                IngresarCodigoEvento.setVisible(false);
+                
+                //HABILITAR
+                edicionTituloMusical.setEditable(true);
+                edicionFechaMusical.setEnabled(true);
+                edicionGenteMusical.setEditable(true);
+                musicoIngresadoTF.setEditable(true);
+                edicionMontoMusical.setEditable(true);
+                edicionTipoMusica.setEnabled(true);
+                jButton29.setEnabled(true);
+                jButton49.setEnabled(true);
+                edicionDescripcionMusical.setEditable(true);
+                jButton28.setEnabled(true);
+            } else if (eventosCreados.get(pos) instanceof EventoReligioso) {
+                EventoReligioso eventoReligioso = (EventoReligioso) evento;
+                
+                //MOSTRAR LA INFORMACIÓN
+                edicionTituloReligioso.setText(evento.getTituloEvento());
+                edicionCodigoReligioso.setText(String.valueOf(evento.getCodigo()));
+                edicionMontoReligioso.setText(String.valueOf(evento.getMontoRenta()));
+                edicionFechaReligioso.setDate(evento.getFechaEvento());
+                edicionDescripcionReligioso.setText(evento.getDescripcion());
+                edicionGenteReligioso.setText(String.valueOf(eventoReligioso.getCantidadGente()));
+                genteConvertida.setText(String.valueOf(eventoReligioso.getCantidadGenteConvertidas()));
+                
+                //INICIAR
+                EditarEventoReligioso.setVisible(true);
+                EditarEventoReligioso.setResizable(false);
+                EditarEventoReligioso.setLocationRelativeTo(null);
+                EditarEventoReligioso.pack();
+                codigoIngresadoTF.setText("");
+                IngresarCodigoEvento.setVisible(false);
+                
+                //HABILITADO
+                edicionTituloReligioso.setEditable(true);
+                edicionFechaReligioso.setEnabled(true);
+                edicionGenteReligioso.setEditable(true);
+                edicionMontoReligioso.setEditable(true);
+                genteConvertida.setEditable(true);
+                edicionDescripcionReligioso.setEditable(true);
+                jButton15.setEnabled(true);
+                
+            } else {
+                JOptionPane.showMessageDialog(null, "Evento No Existe!");
+                codigoIngresadoTF.setText("");
+                IngresarCodigoEvento.setVisible(false);
+                AdminEventos.setVisible(true);
+            }
+            
             if (evento.isEventoCancelado()) {
                 JOptionPane.showMessageDialog(null, "El evento ha sido cancelado.\nEsta en modo solo ver.");
                 
@@ -4793,12 +4922,26 @@ public class JavaTicket extends javax.swing.JFrame {
                 EditarEventoMusical.pack();
                 codigoIngresadoTF.setText("");
                 IngresarCodigoEvento.setVisible(false);
+                
+                //DESHABILITAR
+                edicionTituloMusical.setEditable(false);
+                edicionFechaMusical.setEnabled(false);
+                edicionGenteMusical.setEditable(false);
+                musicoIngresadoTF.setEditable(false);
+                edicionMontoMusical.setEditable(false);
+                edicionTipoMusica.setEnabled(false);
+                jButton29.setEnabled(false);
+                jButton49.setEnabled(false);
+                edicionDescripcionMusical.setEditable(false);
+                jButton28.setEnabled(false);
             } else if (eventosCreados.get(pos) instanceof EventoReligioso) {
                 EventoReligioso eventoReligioso = (EventoReligioso) evento;
                 
                 //MOSTRAR LA INFORMACIÓN
                 edicionTituloReligioso.setText(evento.getTituloEvento());
                 edicionCodigoReligioso.setText(String.valueOf(evento.getCodigo()));
+                edicionMontoReligioso.setText(String.valueOf(evento.getMontoRenta()));
+                edicionFechaReligioso.setDate(evento.getFechaEvento());
                 edicionDescripcionReligioso.setText(evento.getDescripcion());
                 edicionGenteReligioso.setText(String.valueOf(eventoReligioso.getCantidadGente()));
                 genteConvertida.setText(String.valueOf(eventoReligioso.getCantidadGenteConvertidas()));
@@ -4810,113 +4953,17 @@ public class JavaTicket extends javax.swing.JFrame {
                 EditarEventoReligioso.pack();
                 codigoIngresadoTF.setText("");
                 IngresarCodigoEvento.setVisible(false);
+                
+                //DESHABILITADO
+                edicionTituloReligioso.setEditable(false);
+                edicionFechaReligioso.setEnabled(false);
+                edicionGenteReligioso.setEditable(false);
+                edicionMontoReligioso.setEditable(false);
+                genteConvertida.setEditable(false);
+                edicionDescripcionReligioso.setEditable(false);
+                jButton15.setEnabled(false);
             }
-                
-            }
-            
-            if (evento instanceof EventoDeportivo) {
-                EventoDeportivo eventoDeportivo = (EventoDeportivo) evento;
-
-                //MOSTRAR LA INFORMACIÓN
-                String deporteSeleccionado = eventoDeportivo.getDeporte().toString();
-                DefaultComboBoxModel<String> model = (DefaultComboBoxModel<String>) edicionTipoDeporte.getModel();
-                
-                model.setSelectedItem(deporteSeleccionado);
-                
-                edicionCodigo.setText(String.valueOf(evento.getCodigo()));
-                edicionTitulo.setText(evento.getTituloEvento());
-                edicionDescripcion.setText(evento.getDescripcion());
-                edicionFecha.setDate(evento.getFechaEvento());
-                edicionMonto.setText(String.valueOf(evento.getMontoRenta()));
-                edicionGente.setText(String.valueOf(eventoDeportivo.getCantidadGente()));
-                edicionEquipo1.setText(eventoDeportivo.getEquipo1());
-                edicionEquipo2.setText(eventoDeportivo.getEquipo2());
-                
-                listaEquipo1.setModel(new DefaultListModel());
-                for (String jugador : eventoDeportivo.getListadoJugadores1()) {
-                ((DefaultListModel) listaEquipo1.getModel()).addElement(jugador);
-                }
-                listaEquipo2.setModel(new DefaultListModel());
-                for (String jugador : eventoDeportivo.getListadoJugadores2()) {
-                ((DefaultListModel) listaEquipo2.getModel()).addElement(jugador);
-                }
-                
-                //INICIAR
-                EditarEventoDeportivo.setVisible(true);
-                EditarEventoDeportivo.setResizable(false);
-                EditarEventoDeportivo.setLocationRelativeTo(null);
-                EditarEventoDeportivo.pack();
-                codigoIngresadoTF.setText("");
-                IngresarCodigoEvento.setVisible(false);
-                
-                //HABILITAR
-                edicionTitulo.setEditable(true);
-                edicionFecha.setEnabled(true);
-                edicionGente.setEditable(true);
-                jugadorIngresado1.setEditable(true);
-                jugadorIngresado2.setEditable(true);
-                edicionMonto.setEditable(true);
-                edicionEquipo1.setEditable(true);
-                edicionEquipo2.setEditable(true);
-                edicionTipoDeporte.setEnabled(true);
-                agregarEquipo1.setEnabled(true);
-                agregarEquipo2.setEnabled(true);
-                borrarEquipo1.setEnabled(true);
-                borrarEquipo2.setEnabled(true);
-                edicionDescripcion.setEditable(true);
-                jButton16.setEnabled(true);
-                
-            } else if (eventosCreados.get(pos) instanceof EventoMusical) {
-                EventoMusical eventoMusical = (EventoMusical) evento;
-                
-                //MOSTRAR LA INFORMACIÓN
-                String musicaSeleccionada = eventoMusical.getTipoMusica().toString();
-                DefaultComboBoxModel<String> model = (DefaultComboBoxModel<String>) edicionTipoMusica.getModel();
-                
-                model.setSelectedItem(musicaSeleccionada);
-                
-                edicionTituloMusical.setText(evento.getTituloEvento());
-                edicionCodigoMusical.setText(String.valueOf(evento.getCodigo()));
-                edicionDescripcionMusical.setText(evento.getDescripcion());
-                edicionFechaMusical.setDate(evento.getFechaEvento());
-                edicionMontoMusical.setText(String.valueOf(evento.getMontoRenta()));
-                edicionGenteMusical.setText(String.valueOf(eventoMusical.getCantidadGente()));
-                jTextField4.setText(String.valueOf(eventoMusical.getSeguro()));
-                
-                listaMusicos.setModel(new DefaultListModel());
-                for (String musico : eventoMusical.getListadoEquipoMusical()) {
-                ((DefaultListModel) listaMusicos.getModel()).addElement(musico);
-                }
-                
-                //INICIAR
-                EditarEventoMusical.setVisible(true);
-                EditarEventoMusical.setResizable(false);
-                EditarEventoMusical.setLocationRelativeTo(null);
-                EditarEventoMusical.pack();
-                codigoIngresadoTF.setText("");
-                IngresarCodigoEvento.setVisible(false);
-            } else if (eventosCreados.get(pos) instanceof EventoReligioso) {
-                EventoReligioso eventoReligioso = (EventoReligioso) evento;
-                
-                //MOSTRAR LA INFORMACIÓN
-                edicionTituloReligioso.setText(evento.getTituloEvento());
-                edicionCodigoReligioso.setText(String.valueOf(evento.getCodigo()));
-                edicionDescripcionReligioso.setText(evento.getDescripcion());
-                edicionGenteReligioso.setText(String.valueOf(eventoReligioso.getCantidadGente()));
-                genteConvertida.setText(String.valueOf(eventoReligioso.getCantidadGenteConvertidas()));
-                
-                //INICIAR
-                EditarEventoReligioso.setVisible(true);
-                EditarEventoReligioso.setResizable(false);
-                EditarEventoReligioso.setLocationRelativeTo(null);
-                EditarEventoReligioso.pack();
-                codigoIngresadoTF.setText("");
-                IngresarCodigoEvento.setVisible(false);
-            } else {
-                JOptionPane.showMessageDialog(null, "Evento No Existe!");
-                codigoIngresadoTF.setText("");
-                IngresarCodigoEvento.setVisible(false);
-                AdminEventos.setVisible(true);
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////    
             }
         } else {
             codigoIngresadoTF.setText("");
@@ -5611,6 +5658,7 @@ public class JavaTicket extends javax.swing.JFrame {
 
         if (evento != null && userEventoPos != -1) {
             evento.cancelarEvento();
+            evento.getEventoCancelado();
             /*
             // Eliminar evento de la lista general
             eventosCreados.remove(evento);
@@ -5843,7 +5891,7 @@ public class JavaTicket extends javax.swing.JFrame {
                 rowData[1] = "Evento Religioso";
             }
             rowData[2] = ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().get(i).getTituloEvento();
-            rowData[3] = ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().get(i).getEventoCancelado() ? "Cancelado" : "Activo";
+            rowData[3] = ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().get(i).getEventoCancelado() ? "CANCELADO" : "ACTIVO";
             rowData[4] = ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().get(i).getMontoRenta();
             model.addRow(rowData);
         }

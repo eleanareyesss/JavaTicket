@@ -14,7 +14,7 @@ public  class Evento
     protected Date fechaEvento;
     protected int montoRenta;//renta del estadio
     protected boolean eventoCancelado;
-    private boolean cancelado;
+    private boolean cancelado=false;
     protected double multaEvento;
     //todas se ingresan desde el teclado
 
@@ -84,10 +84,6 @@ public  class Evento
         this.multaEvento = multaEvento;
     }
     
-    public boolean getEventoCancelado(){
-        return cancelado;
-    }
-    
     public void cancelarEvento() {
         Calendar hoy = Calendar.getInstance();
         Calendar unDiaAntesEvento = Calendar.getInstance();
@@ -96,15 +92,22 @@ public  class Evento
 
         if (hoy.before(unDiaAntesEvento)) {
             eventoCancelado = true;
-            cancelado = true;
+            
             multaEvento = 0;
         } else {
             eventoCancelado = true;
-            cancelado = true;
+            
             multaEvento = montoRenta * 0.5;
         }
     }
 
+    public boolean setEventoCancelado(){
+        return cancelado==false;
+    }
+    public boolean getEventoCancelado() {
+        return cancelado==true;
+    }
+    
     public String datosCancelados() {
         if (eventoCancelado) {
             return "Estado: Cancelado, Multa: Lps." + multaEvento;
