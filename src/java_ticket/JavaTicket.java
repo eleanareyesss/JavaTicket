@@ -438,14 +438,20 @@ public class JavaTicket extends javax.swing.JFrame {
         jPanel24 = new javax.swing.JPanel();
         jScrollPane11 = new javax.swing.JScrollPane();
         tablaUsuarioLimitado = new javax.swing.JTable();
+        jButton56 = new javax.swing.JButton();
+        jLabel142 = new javax.swing.JLabel();
         jLabel85 = new javax.swing.JLabel();
+        jLabel141 = new javax.swing.JLabel();
         VerPerfilContenido = new javax.swing.JDialog();
         jScrollPane12 = new javax.swing.JScrollPane();
         tablaUsuarioContenido = new javax.swing.JTable();
         jScrollPane13 = new javax.swing.JScrollPane();
         tablaEventosContenido = new javax.swing.JTable();
         jLabel86 = new javax.swing.JLabel();
+        jLabel143 = new javax.swing.JLabel();
         jLabel87 = new javax.swing.JLabel();
+        jButton57 = new javax.swing.JButton();
+        jLabel140 = new javax.swing.JLabel();
         EventosRealizados = new javax.swing.JDialog();
         jPanel25 = new javax.swing.JPanel();
         jScrollPane14 = new javax.swing.JScrollPane();
@@ -455,18 +461,27 @@ public class JavaTicket extends javax.swing.JFrame {
         jLabel88 = new javax.swing.JLabel();
         jLabel89 = new javax.swing.JLabel();
         jButton27 = new javax.swing.JButton();
+        jLabel144 = new javax.swing.JLabel();
         EventosFuturos = new javax.swing.JDialog();
         jPanel26 = new javax.swing.JPanel();
         jScrollPane20 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jLabel146 = new javax.swing.JLabel();
         jScrollPane21 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
+        jLabel147 = new javax.swing.JLabel();
+        jButton58 = new javax.swing.JButton();
+        jLabel145 = new javax.swing.JLabel();
         EventosCancelados = new javax.swing.JDialog();
         jPanel27 = new javax.swing.JPanel();
         jScrollPane22 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
         jScrollPane23 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
+        jLabel149 = new javax.swing.JLabel();
+        jLabel150 = new javax.swing.JLabel();
+        jButton59 = new javax.swing.JButton();
+        jLabel148 = new javax.swing.JLabel();
         IngresoGeneradoPorFecha = new javax.swing.JDialog();
         jPanel28 = new javax.swing.JPanel();
         jScrollPane24 = new javax.swing.JScrollPane();
@@ -475,6 +490,13 @@ public class JavaTicket extends javax.swing.JFrame {
         jTable6 = new javax.swing.JTable();
         jLabel90 = new javax.swing.JLabel();
         totalGenerado = new javax.swing.JLabel();
+        finDate = new com.toedter.calendar.JDateChooser();
+        inicioDate = new com.toedter.calendar.JDateChooser();
+        jButton60 = new javax.swing.JButton();
+        jLabel154 = new javax.swing.JLabel();
+        jLabel153 = new javax.swing.JLabel();
+        jLabel152 = new javax.swing.JLabel();
+        jLabel151 = new javax.swing.JLabel();
         logInPanel = new javax.swing.JPanel();
         jButton31 = new javax.swing.JButton();
         nameLabel = new javax.swing.JLabel();
@@ -3287,6 +3309,14 @@ public class JavaTicket extends javax.swing.JFrame {
             .addComponent(jPanel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        VerPerfilLimitado.setMaximumSize(new java.awt.Dimension(875, 610));
+        VerPerfilLimitado.setMinimumSize(new java.awt.Dimension(875, 610));
+        VerPerfilLimitado.setPreferredSize(new java.awt.Dimension(875, 610));
+
+        jPanel24.setMaximumSize(new java.awt.Dimension(875, 610));
+        jPanel24.setMinimumSize(new java.awt.Dimension(875, 610));
+        jPanel24.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         tablaUsuarioLimitado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -3312,32 +3342,35 @@ public class JavaTicket extends javax.swing.JFrame {
             tablaUsuarioLimitado.getColumnModel().getColumn(3).setResizable(false);
         }
 
-        jLabel85.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
-        jLabel85.setText("Informacion del Usuario");
+        jPanel24.add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 700, 160));
 
-        javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
-        jPanel24.setLayout(jPanel24Layout);
-        jPanel24Layout.setHorizontalGroup(
-            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel24Layout.createSequentialGroup()
-                .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel24Layout.createSequentialGroup()
-                        .addGap(79, 79, 79)
-                        .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel24Layout.createSequentialGroup()
-                        .addGap(234, 234, 234)
-                        .addComponent(jLabel85)))
-                .addContainerGap(96, Short.MAX_VALUE))
-        );
-        jPanel24Layout.setVerticalGroup(
-            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel24Layout.createSequentialGroup()
-                .addContainerGap(17, Short.MAX_VALUE)
-                .addComponent(jLabel85)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(57, 57, 57))
-        );
+        jButton56.setBackground(new java.awt.Color(165, 241, 233));
+        jButton56.setFont(new java.awt.Font("Ebrima", 1, 18)); // NOI18N
+        jButton56.setForeground(new java.awt.Color(255, 255, 255));
+        jButton56.setText("Regresar");
+        jButton56.setBorder(null);
+        jButton56.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton56.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton56ActionPerformed(evt);
+            }
+        });
+        jPanel24.add(jButton56, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 510, 160, -1));
+
+        jLabel142.setFont(new java.awt.Font("Ebrima", 1, 48)); // NOI18N
+        jLabel142.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel142.setText("Perfil Limitado");
+        jPanel24.add(jLabel142, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, -1, -1));
+
+        jLabel85.setFont(new java.awt.Font("Ebrima", 1, 18)); // NOI18N
+        jLabel85.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel85.setText("Informacion del Usuario");
+        jPanel24.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 80, -1, -1));
+
+        jLabel141.setFont(new java.awt.Font("Ebrima", 1, 24)); // NOI18N
+        jLabel141.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel141.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Ver Perfil.png"))); // NOI18N
+        jPanel24.add(jLabel141, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout VerPerfilLimitadoLayout = new javax.swing.GroupLayout(VerPerfilLimitado.getContentPane());
         VerPerfilLimitado.getContentPane().setLayout(VerPerfilLimitadoLayout);
@@ -3352,6 +3385,14 @@ public class JavaTicket extends javax.swing.JFrame {
             .addComponent(jPanel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        VerPerfilContenido.setMaximumSize(new java.awt.Dimension(875, 610));
+        VerPerfilContenido.setMinimumSize(new java.awt.Dimension(875, 610));
+        VerPerfilContenido.setPreferredSize(new java.awt.Dimension(875, 610));
+        VerPerfilContenido.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tablaUsuarioContenido.setBackground(new java.awt.Color(255, 255, 255));
+        tablaUsuarioContenido.setFont(new java.awt.Font("Ebrima", 1, 12)); // NOI18N
+        tablaUsuarioContenido.setForeground(new java.awt.Color(0, 0, 0));
         tablaUsuarioContenido.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -3377,16 +3418,21 @@ public class JavaTicket extends javax.swing.JFrame {
             tablaUsuarioContenido.getColumnModel().getColumn(3).setResizable(false);
         }
 
+        VerPerfilContenido.getContentPane().add(jScrollPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 720, 110));
+
+        tablaEventosContenido.setBackground(new java.awt.Color(255, 255, 255));
+        tablaEventosContenido.setFont(new java.awt.Font("Ebrima", 1, 12)); // NOI18N
+        tablaEventosContenido.setForeground(new java.awt.Color(0, 0, 0));
         tablaEventosContenido.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "Tipo", "Titulo", "Monto"
+                "ID", "Tipo", "Titulo", "Estado", "Monto"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -3402,44 +3448,52 @@ public class JavaTicket extends javax.swing.JFrame {
             tablaEventosContenido.getColumnModel().getColumn(3).setResizable(false);
         }
 
+        VerPerfilContenido.getContentPane().add(jScrollPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, 730, 250));
+
+        jLabel86.setFont(new java.awt.Font("Ebrima", 1, 24)); // NOI18N
+        jLabel86.setForeground(new java.awt.Color(255, 255, 255));
         jLabel86.setText("Informacion Del Usuario");
+        VerPerfilContenido.getContentPane().add(jLabel86, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, -1, -1));
 
+        jLabel143.setFont(new java.awt.Font("Ebrima", 1, 48)); // NOI18N
+        jLabel143.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel143.setText("Perfil Contenido");
+        VerPerfilContenido.getContentPane().add(jLabel143, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, -1, -1));
+
+        jLabel87.setFont(new java.awt.Font("Ebrima", 1, 24)); // NOI18N
+        jLabel87.setForeground(new java.awt.Color(255, 255, 255));
         jLabel87.setText("Eventos del Usuario");
+        VerPerfilContenido.getContentPane().add(jLabel87, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, -1, -1));
 
-        javax.swing.GroupLayout VerPerfilContenidoLayout = new javax.swing.GroupLayout(VerPerfilContenido.getContentPane());
-        VerPerfilContenido.getContentPane().setLayout(VerPerfilContenidoLayout);
-        VerPerfilContenidoLayout.setHorizontalGroup(
-            VerPerfilContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, VerPerfilContenidoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel86)
-                .addGap(223, 223, 223))
-            .addGroup(VerPerfilContenidoLayout.createSequentialGroup()
-                .addGroup(VerPerfilContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(VerPerfilContenidoLayout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addGroup(VerPerfilContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(VerPerfilContenidoLayout.createSequentialGroup()
-                        .addGap(247, 247, 247)
-                        .addComponent(jLabel87)))
-                .addContainerGap(66, Short.MAX_VALUE))
-        );
-        VerPerfilContenidoLayout.setVerticalGroup(
-            VerPerfilContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(VerPerfilContenidoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel86)
-                .addGap(39, 39, 39)
-                .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
-                .addComponent(jLabel87)
-                .addGap(26, 26, 26)
-                .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(75, Short.MAX_VALUE))
-        );
+        jButton57.setBackground(new java.awt.Color(165, 241, 233));
+        jButton57.setFont(new java.awt.Font("Ebrima", 1, 18)); // NOI18N
+        jButton57.setForeground(new java.awt.Color(255, 255, 255));
+        jButton57.setText("Regresar");
+        jButton57.setBorder(null);
+        jButton57.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton57.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton57ActionPerformed(evt);
+            }
+        });
+        VerPerfilContenido.getContentPane().add(jButton57, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 510, 160, -1));
 
+        jLabel140.setFont(new java.awt.Font("Ebrima", 1, 24)); // NOI18N
+        jLabel140.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel140.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Ver Perfil.png"))); // NOI18N
+        VerPerfilContenido.getContentPane().add(jLabel140, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        EventosRealizados.setMaximumSize(new java.awt.Dimension(875, 610));
+        EventosRealizados.setMinimumSize(new java.awt.Dimension(875, 610));
+
+        jPanel25.setMaximumSize(new java.awt.Dimension(875, 610));
+        jPanel25.setMinimumSize(new java.awt.Dimension(875, 610));
+        jPanel25.setPreferredSize(new java.awt.Dimension(875, 610));
+        jPanel25.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tablaEventosRealizados.setBackground(new java.awt.Color(255, 255, 255));
+        tablaEventosRealizados.setFont(new java.awt.Font("Ebrima", 1, 12)); // NOI18N
+        tablaEventosRealizados.setForeground(new java.awt.Color(0, 0, 0));
         tablaEventosRealizados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -3465,6 +3519,11 @@ public class JavaTicket extends javax.swing.JFrame {
             tablaEventosRealizados.getColumnModel().getColumn(4).setResizable(false);
         }
 
+        jPanel25.add(jScrollPane14, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 720, 170));
+
+        tablaEstadisticaEventosRealizados.setBackground(new java.awt.Color(255, 255, 255));
+        tablaEstadisticaEventosRealizados.setFont(new java.awt.Font("Ebrima", 1, 12)); // NOI18N
+        tablaEstadisticaEventosRealizados.setForeground(new java.awt.Color(0, 0, 0));
         tablaEstadisticaEventosRealizados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -3489,9 +3548,17 @@ public class JavaTicket extends javax.swing.JFrame {
             tablaEstadisticaEventosRealizados.getColumnModel().getColumn(3).setResizable(false);
         }
 
-        jLabel88.setText("Estadistica");
+        jPanel25.add(jScrollPane18, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, 500, 196));
 
+        jLabel88.setFont(new java.awt.Font("Ebrima", 1, 24)); // NOI18N
+        jLabel88.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel88.setText("Estadistica");
+        jPanel25.add(jLabel88, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 270, -1, -1));
+
+        jLabel89.setFont(new java.awt.Font("Ebrima", 1, 24)); // NOI18N
+        jLabel89.setForeground(new java.awt.Color(255, 255, 255));
         jLabel89.setText("Eventos Realizados");
+        jPanel25.add(jLabel89, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 60, -1, -1));
 
         jButton27.setText("Regresar");
         jButton27.addActionListener(new java.awt.event.ActionListener() {
@@ -3499,60 +3566,35 @@ public class JavaTicket extends javax.swing.JFrame {
                 jButton27ActionPerformed(evt);
             }
         });
+        jPanel25.add(jButton27, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 510, -1, -1));
 
-        javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
-        jPanel25.setLayout(jPanel25Layout);
-        jPanel25Layout.setHorizontalGroup(
-            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel25Layout.createSequentialGroup()
-                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel25Layout.createSequentialGroup()
-                        .addGap(78, 78, 78)
-                        .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel25Layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel25Layout.createSequentialGroup()
-                        .addGap(269, 269, 269)
-                        .addComponent(jLabel88))
-                    .addGroup(jPanel25Layout.createSequentialGroup()
-                        .addGap(256, 256, 256)
-                        .addComponent(jLabel89))
-                    .addGroup(jPanel25Layout.createSequentialGroup()
-                        .addGap(241, 241, 241)
-                        .addComponent(jButton27)))
-                .addContainerGap(69, Short.MAX_VALUE))
-        );
-        jPanel25Layout.setVerticalGroup(
-            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel25Layout.createSequentialGroup()
-                .addGap(13, 13, 13)
-                .addComponent(jLabel89)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
-                .addComponent(jLabel88)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54)
-                .addComponent(jButton27)
-                .addGap(23, 23, 23))
-        );
+        jLabel144.setFont(new java.awt.Font("Ebrima", 1, 24)); // NOI18N
+        jLabel144.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel144.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Eventos Reportes.png"))); // NOI18N
+        jPanel25.add(jLabel144, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout EventosRealizadosLayout = new javax.swing.GroupLayout(EventosRealizados.getContentPane());
         EventosRealizados.getContentPane().setLayout(EventosRealizadosLayout);
         EventosRealizadosLayout.setHorizontalGroup(
             EventosRealizadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(EventosRealizadosLayout.createSequentialGroup()
-                .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, 875, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         EventosRealizadosLayout.setVerticalGroup(
             EventosRealizadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(EventosRealizadosLayout.createSequentialGroup()
-                .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
+
+        EventosFuturos.setMaximumSize(new java.awt.Dimension(875, 610));
+        EventosFuturos.setMinimumSize(new java.awt.Dimension(875, 610));
+        EventosFuturos.setPreferredSize(new java.awt.Dimension(875, 610));
+
+        jPanel26.setMaximumSize(new java.awt.Dimension(875, 610));
+        jPanel26.setPreferredSize(new java.awt.Dimension(875, 610));
+        jPanel26.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -3579,6 +3621,13 @@ public class JavaTicket extends javax.swing.JFrame {
             jTable1.getColumnModel().getColumn(4).setResizable(false);
         }
 
+        jPanel26.add(jScrollPane20, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 730, 200));
+
+        jLabel146.setFont(new java.awt.Font("Ebrima", 1, 24)); // NOI18N
+        jLabel146.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel146.setText("Estadistica");
+        jPanel26.add(jLabel146, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 290, -1, -1));
+
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -3603,39 +3652,47 @@ public class JavaTicket extends javax.swing.JFrame {
             jTable2.getColumnModel().getColumn(3).setResizable(false);
         }
 
-        javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
-        jPanel26.setLayout(jPanel26Layout);
-        jPanel26Layout.setHorizontalGroup(
-            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel26Layout.createSequentialGroup()
-                .addGap(73, 73, 73)
-                .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(96, Short.MAX_VALUE))
-        );
-        jPanel26Layout.setVerticalGroup(
-            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel26Layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(105, 105, 105)
-                .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(67, Short.MAX_VALUE))
-        );
+        jPanel26.add(jScrollPane21, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 316, -1, 190));
+
+        jLabel147.setFont(new java.awt.Font("Ebrima", 1, 24)); // NOI18N
+        jLabel147.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel147.setText("Eventos Futuros");
+        jPanel26.add(jLabel147, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 60, -1, -1));
+
+        jButton58.setText("Regresar");
+        jButton58.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton58ActionPerformed(evt);
+            }
+        });
+        jPanel26.add(jButton58, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 510, -1, -1));
+
+        jLabel145.setFont(new java.awt.Font("Ebrima", 1, 24)); // NOI18N
+        jLabel145.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel145.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Eventos Reportes.png"))); // NOI18N
+        jPanel26.add(jLabel145, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout EventosFuturosLayout = new javax.swing.GroupLayout(EventosFuturos.getContentPane());
         EventosFuturos.getContentPane().setLayout(EventosFuturosLayout);
         EventosFuturosLayout.setHorizontalGroup(
             EventosFuturosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(EventosFuturosLayout.createSequentialGroup()
-                .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, 875, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         EventosFuturosLayout.setVerticalGroup(
             EventosFuturosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
+
+        EventosCancelados.setMaximumSize(new java.awt.Dimension(875, 610));
+        EventosCancelados.setMinimumSize(new java.awt.Dimension(875, 610));
+        EventosCancelados.setPreferredSize(new java.awt.Dimension(875, 610));
+
+        jPanel27.setMaximumSize(new java.awt.Dimension(875, 610));
+        jPanel27.setMinimumSize(new java.awt.Dimension(875, 610));
+        jPanel27.setPreferredSize(new java.awt.Dimension(875, 610));
+        jPanel27.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -3662,6 +3719,8 @@ public class JavaTicket extends javax.swing.JFrame {
             jTable3.getColumnModel().getColumn(4).setResizable(false);
         }
 
+        jPanel27.add(jScrollPane22, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 720, 200));
+
         jTable4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -3686,27 +3745,30 @@ public class JavaTicket extends javax.swing.JFrame {
             jTable4.getColumnModel().getColumn(3).setResizable(false);
         }
 
-        javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
-        jPanel27.setLayout(jPanel27Layout);
-        jPanel27Layout.setHorizontalGroup(
-            jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel27Layout.createSequentialGroup()
-                .addGap(67, 67, 67)
-                .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel27Layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(jScrollPane23, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(90, Short.MAX_VALUE))
-        );
-        jPanel27Layout.setVerticalGroup(
-            jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel27Layout.createSequentialGroup()
-                .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addComponent(jScrollPane23, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(290, Short.MAX_VALUE))
-        );
+        jPanel27.add(jScrollPane23, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 310, 408, 200));
+
+        jLabel149.setFont(new java.awt.Font("Ebrima", 1, 24)); // NOI18N
+        jLabel149.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel149.setText("Eventos Cancelados");
+        jPanel27.add(jLabel149, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, -1, -1));
+
+        jLabel150.setFont(new java.awt.Font("Ebrima", 1, 24)); // NOI18N
+        jLabel150.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel150.setText("Estadistica");
+        jPanel27.add(jLabel150, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, -1, -1));
+
+        jButton59.setText("Regresar");
+        jButton59.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton59ActionPerformed(evt);
+            }
+        });
+        jPanel27.add(jButton59, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 510, -1, -1));
+
+        jLabel148.setFont(new java.awt.Font("Ebrima", 1, 24)); // NOI18N
+        jLabel148.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel148.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Eventos Reportes.png"))); // NOI18N
+        jPanel27.add(jLabel148, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout EventosCanceladosLayout = new javax.swing.GroupLayout(EventosCancelados.getContentPane());
         EventosCancelados.getContentPane().setLayout(EventosCanceladosLayout);
@@ -3723,6 +3785,8 @@ public class JavaTicket extends javax.swing.JFrame {
                 .addComponent(jPanel27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
+        jPanel28.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jTable5.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -3732,6 +3796,8 @@ public class JavaTicket extends javax.swing.JFrame {
             }
         ));
         jScrollPane24.setViewportView(jTable5);
+
+        jPanel28.add(jScrollPane24, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 91, 450, 210));
 
         jTable6.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -3756,40 +3822,49 @@ public class JavaTicket extends javax.swing.JFrame {
             jTable6.getColumnModel().getColumn(2).setResizable(false);
         }
 
-        jLabel90.setText("Total Generado");
+        jPanel28.add(jScrollPane25, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 314, -1, 130));
 
-        javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
-        jPanel28.setLayout(jPanel28Layout);
-        jPanel28Layout.setHorizontalGroup(
-            jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel28Layout.createSequentialGroup()
-                .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel28Layout.createSequentialGroup()
-                        .addGap(65, 65, 65)
-                        .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel28Layout.createSequentialGroup()
-                        .addGap(218, 218, 218)
-                        .addComponent(totalGenerado, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel28Layout.createSequentialGroup()
-                        .addGap(233, 233, 233)
-                        .addComponent(jLabel90)))
-                .addContainerGap(66, Short.MAX_VALUE))
-        );
-        jPanel28Layout.setVerticalGroup(
-            jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel28Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jScrollPane24, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane25, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel90)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(totalGenerado, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(33, Short.MAX_VALUE))
-        );
+        jLabel90.setText("Total Generado");
+        jPanel28.add(jLabel90, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 450, -1, -1));
+
+        totalGenerado.setFont(new java.awt.Font("Ebrima", 1, 12)); // NOI18N
+        jPanel28.add(totalGenerado, new org.netbeans.lib.awtextra.AbsoluteConstraints(218, 478, 117, 48));
+
+        finDate.setBackground(new java.awt.Color(255, 255, 255));
+        finDate.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel28.add(finDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 190, 210, -1));
+
+        inicioDate.setBackground(new java.awt.Color(255, 255, 255));
+        inicioDate.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel28.add(inicioDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 120, 210, -1));
+
+        jButton60.setText("Regresar");
+        jButton60.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton60ActionPerformed(evt);
+            }
+        });
+        jPanel28.add(jButton60, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 520, -1, -1));
+
+        jLabel154.setFont(new java.awt.Font("Ebrima", 1, 24)); // NOI18N
+        jLabel154.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel154.setText("Fecha de Fin");
+        jPanel28.add(jLabel154, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 150, -1, -1));
+
+        jLabel153.setFont(new java.awt.Font("Ebrima", 1, 24)); // NOI18N
+        jLabel153.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel153.setText("Fecha de Inicio");
+        jPanel28.add(jLabel153, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 80, -1, -1));
+
+        jLabel152.setFont(new java.awt.Font("Ebrima", 1, 24)); // NOI18N
+        jLabel152.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel152.setText("Eventos Por Fecha");
+        jPanel28.add(jLabel152, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, -1, -1));
+
+        jLabel151.setFont(new java.awt.Font("Ebrima", 1, 24)); // NOI18N
+        jLabel151.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel151.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Eventos Reportes.png"))); // NOI18N
+        jPanel28.add(jLabel151, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout IngresoGeneradoPorFechaLayout = new javax.swing.GroupLayout(IngresoGeneradoPorFecha.getContentPane());
         IngresoGeneradoPorFecha.getContentPane().setLayout(IngresoGeneradoPorFechaLayout);
@@ -5866,14 +5941,14 @@ public class JavaTicket extends javax.swing.JFrame {
     
     //REPORTES
     public void llenarPerfilAdmin() {
-        DefaultTableModel model = (DefaultTableModel) tablaUsuarioAdmin.getModel();
+        DefaultTableModel model1 = (DefaultTableModel) tablaUsuarioAdmin.getModel();
         Object rowData[] = new Object[4];
         int pos = searchUserIndex(userTextField.getText());
         rowData[0] = ((UsuarioAdmin) usuarios.get(pos)).getNombreCompleto();
         rowData[1] = ((UsuarioAdmin) usuarios.get(pos)).getUsername();
         rowData[2] = ((UsuarioAdmin) usuarios.get(pos)).getPassword();
         rowData[3] = ((UsuarioAdmin) usuarios.get(pos)).getEdad();
-        model.addRow(rowData);
+        model1.addRow(rowData);
 
     }
 
@@ -5898,19 +5973,19 @@ public class JavaTicket extends javax.swing.JFrame {
     }
 
     public void llenarPerfilContenido() {
-        DefaultTableModel model = (DefaultTableModel) tablaUsuarioContenido.getModel();
+        DefaultTableModel model1 = (DefaultTableModel) tablaUsuarioContenido.getModel();
         Object rowData[] = new Object[4];
         int pos = searchUserIndex(userTextField.getText());
         rowData[0] = ((UsuarioContenido) usuarios.get(pos)).getNombreCompleto();
         rowData[1] = ((UsuarioContenido) usuarios.get(pos)).getUsername();
         rowData[2] = ((UsuarioContenido) usuarios.get(pos)).getPassword();
         rowData[3] = ((UsuarioContenido) usuarios.get(pos)).getEdad();
-        model.addRow(rowData);
+        model1.addRow(rowData);
     }
 
     public void llenarPerfilEventosContenido() {
         DefaultTableModel model = (DefaultTableModel) tablaEventosContenido.getModel();
-        Object rowData[] = new Object[4];
+        Object rowData[] = new Object[5];
         int pos = searchUserIndex(userTextField.getText());
         for (int i = 0; i < ((UsuarioContenido) usuarios.get(pos)).getEventosCreados().size(); i++) {
             rowData[0] = ((UsuarioContenido) usuarios.get(pos)).getEventosCreados().get(i).getCodigo();
@@ -5922,7 +5997,8 @@ public class JavaTicket extends javax.swing.JFrame {
                 rowData[1] = "Evento Religioso";
             }
             rowData[2] = ((UsuarioContenido) usuarios.get(pos)).getEventosCreados().get(i).getTituloEvento();
-            rowData[3] = ((UsuarioContenido) usuarios.get(pos)).getEventosCreados().get(i).getMontoRenta();
+            rowData[3] = ((UsuarioContenido) usuarios.get(pos)).getEventosCreados().get(i).getEventoCancelado() ? "CANCELADO" : "ACTIVO";
+            rowData[4] = ((UsuarioContenido) usuarios.get(pos)).getEventosCreados().get(i).getMontoRenta();
             model.addRow(rowData);
         }
     }
@@ -6678,11 +6754,47 @@ public class JavaTicket extends javax.swing.JFrame {
         VerPerfilAdmin.setVisible(false);
         DefaultTableModel model = (DefaultTableModel) tablaEventosAdmin.getModel();
         model.setRowCount(0); 
+        DefaultTableModel model1 = (DefaultTableModel) tablaUsuarioAdmin.getModel();
+        model1.setRowCount(0);
         Reportes.setVisible(true);
         Reportes.setLocationRelativeTo(null);
         Reportes.setResizable(false);
         Reportes.pack();
     }//GEN-LAST:event_jButton55ActionPerformed
+
+    private void jButton57ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton57ActionPerformed
+        VerPerfilContenido.setVisible(false);
+        DefaultTableModel model = (DefaultTableModel) tablaEventosContenido.getModel();
+        model.setRowCount(0); 
+        DefaultTableModel model1 = (DefaultTableModel) tablaUsuarioContenido.getModel();
+        model1.setRowCount(0);
+        Reportes.setVisible(true);
+        Reportes.setLocationRelativeTo(null);
+        Reportes.setResizable(false);
+        Reportes.pack();
+    }//GEN-LAST:event_jButton57ActionPerformed
+
+    private void jButton56ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton56ActionPerformed
+        VerPerfilLimitado.setVisible(false); 
+        DefaultTableModel model = (DefaultTableModel) tablaUsuarioLimitado.getModel();
+        model.setRowCount(0);
+        Reportes.setVisible(true);
+        Reportes.setLocationRelativeTo(null);
+        Reportes.setResizable(false);
+        Reportes.pack();
+    }//GEN-LAST:event_jButton56ActionPerformed
+
+    private void jButton58ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton58ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton58ActionPerformed
+
+    private void jButton59ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton59ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton59ActionPerformed
+
+    private void jButton60ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton60ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton60ActionPerformed
 
     //Funcion Recursiva
     private  Evento searchEvento(int codigo, int i){
@@ -6854,9 +6966,11 @@ public class JavaTicket extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser fechaEventoAdmin;
     private com.toedter.calendar.JDateChooser fechaEventoMusical;
     private com.toedter.calendar.JDateChooser fechaReligioso;
+    private com.toedter.calendar.JDateChooser finDate;
     private javax.swing.JTextField genteConvertida;
     private javax.swing.JTextField genteEventoMusical;
     private javax.swing.JTextField genteReligioso;
+    private com.toedter.calendar.JDateChooser inicioDate;
     private javax.swing.JTextField inputUser;
     private javax.swing.JTextField inputUsername;
     private javax.swing.JButton jButton1;
@@ -6910,7 +7024,12 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JButton jButton53;
     private javax.swing.JButton jButton54;
     private javax.swing.JButton jButton55;
+    private javax.swing.JButton jButton56;
+    private javax.swing.JButton jButton57;
+    private javax.swing.JButton jButton58;
+    private javax.swing.JButton jButton59;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton60;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
@@ -6962,7 +7081,22 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel138;
     private javax.swing.JLabel jLabel139;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel140;
+    private javax.swing.JLabel jLabel141;
+    private javax.swing.JLabel jLabel142;
+    private javax.swing.JLabel jLabel143;
+    private javax.swing.JLabel jLabel144;
+    private javax.swing.JLabel jLabel145;
+    private javax.swing.JLabel jLabel146;
+    private javax.swing.JLabel jLabel147;
+    private javax.swing.JLabel jLabel148;
+    private javax.swing.JLabel jLabel149;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel150;
+    private javax.swing.JLabel jLabel151;
+    private javax.swing.JLabel jLabel152;
+    private javax.swing.JLabel jLabel153;
+    private javax.swing.JLabel jLabel154;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;

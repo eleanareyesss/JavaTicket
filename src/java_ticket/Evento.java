@@ -16,6 +16,7 @@ public  class Evento
     protected boolean eventoCancelado;
     private boolean cancelado=false;
     protected double multaEvento;
+    private TipoEvento tipoEvento;
     //todas se ingresan desde el teclado
 
     public Evento(int codigo, String tituloEvento, String descripcion, Date fechaEvento, int montoRenta) {
