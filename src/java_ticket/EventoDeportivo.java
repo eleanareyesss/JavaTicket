@@ -20,15 +20,15 @@ public class EventoDeportivo extends Evento {
     cada listado dentro de un arraylist para cada equipo
      */
 
-    public EventoDeportivo(Deportes tipoDeporte, int cantidadGente, String equipo1, String equipo2, int codigo, String tituloEvento, String descripcion, Date fechaEvento, int montoRenta) {
-        super(codigo, tituloEvento, descripcion, fechaEvento, montoRenta);
+     public EventoDeportivo(Deportes tipoDeporte, int cantidadGente, String equipo1, String equipo2,
+                           int codigo, String tituloEvento, String descripcion, Date fechaEvento, int montoRenta) {
+        super(codigo, tituloEvento, TipoEvento.DEPORTIVO ,descripcion, fechaEvento, montoRenta);
         this.tipoDeporte = tipoDeporte;
         this.cantidadGente = cantidadGente;
         this.equipo1 = equipo1;
         this.equipo2 = equipo2;
-        this.listadoJugadores1 = new ArrayList();
-        this.listadoJugadores2 = new ArrayList();
-        
+        this.listadoJugadores1 = new ArrayList<>();
+        this.listadoJugadores2 = new ArrayList<>();
     }
     
 

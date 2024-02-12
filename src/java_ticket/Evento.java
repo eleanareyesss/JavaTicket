@@ -14,14 +14,16 @@ public  class Evento
     protected Date fechaEvento;
     protected int montoRenta;//renta del estadio
     protected boolean eventoCancelado;
-    private boolean cancelado=false;
+    protected boolean cancelado=false;
     protected double multaEvento;
-    private TipoEvento tipoEvento;
+    protected TipoEvento tipoEvento;
+    protected boolean realizado;
     //todas se ingresan desde el teclado
 
-    public Evento(int codigo, String tituloEvento, String descripcion, Date fechaEvento, int montoRenta) {
+    public Evento(int codigo, String tituloEvento, TipoEvento tipoEvento, String descripcion, Date fechaEvento, int montoRenta) {
         this.codigo = codigo;
         this.tituloEvento = tituloEvento;
+        this.tipoEvento = tipoEvento;
         this.descripcion = descripcion;
         this.fechaEvento = fechaEvento;
         this.montoRenta = montoRenta;
@@ -45,6 +47,10 @@ public  class Evento
         this.tituloEvento = tituloEvento;
     }
 
+    public TipoEvento getTipoEvento() {
+        return tipoEvento;
+    }
+    
     public String getDescripcion() {
         return descripcion;
     }
@@ -76,7 +82,19 @@ public  class Evento
     public void setEventoCancelado(boolean eventoCancelado) {
         this.eventoCancelado = eventoCancelado;
     }
+    
+    public boolean isCancelado() {
+        return this.cancelado;
+    }
 
+    public boolean isRealizado() {
+        return realizado;
+    }
+
+    public void setRealizado(boolean realizado) {
+        this.realizado = realizado;
+    }
+    
     public double getMultaEvento() {
         return multaEvento;
     }

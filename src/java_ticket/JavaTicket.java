@@ -11,6 +11,16 @@ import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import javax.swing.JPanel;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.CategoryDataset;
+import org.jfree.data.category.DefaultCategoryDataset;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -33,10 +43,13 @@ public class JavaTicket extends javax.swing.JFrame {
     private static int ultimoCodigoD = 102400, ultimoCodigoM=202400, ultimoCodigoR=302400;
     private int codigoD, codigoM, codigoR;
     private int contadorDeportivos = 0,  contadorMusicales = 0, contadorReligiosos = 0;
+    private double montoDeportivos = 0, montoMusicales = 0, montoReligiosos = 0;
+    private SistemaEventos sistemaEvento;
     /**
      * Creates new form JavaTicket
      */
     public JavaTicket() {
+        sistemaEvento = new SistemaEventos();
         
         initComponents();
         this.setResizable(false);
@@ -1253,9 +1266,7 @@ public class JavaTicket extends javax.swing.JFrame {
             .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        EditartodosElementos.setMaximumSize(new java.awt.Dimension(875, 610));
         EditartodosElementos.setMinimumSize(new java.awt.Dimension(875, 610));
-        EditartodosElementos.setPreferredSize(new java.awt.Dimension(875, 610));
 
         jPanel8.setMaximumSize(new java.awt.Dimension(875, 610));
         jPanel8.setMinimumSize(new java.awt.Dimension(875, 610));
@@ -3095,9 +3106,7 @@ public class JavaTicket extends javax.swing.JFrame {
             .addComponent(jPanel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        Reportes.setMaximumSize(new java.awt.Dimension(875, 610));
         Reportes.setMinimumSize(new java.awt.Dimension(875, 610));
-        Reportes.setPreferredSize(new java.awt.Dimension(875, 610));
 
         jPanel22.setMaximumSize(new java.awt.Dimension(875, 610));
         jPanel22.setMinimumSize(new java.awt.Dimension(875, 610));
@@ -3309,9 +3318,7 @@ public class JavaTicket extends javax.swing.JFrame {
             .addComponent(jPanel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        VerPerfilLimitado.setMaximumSize(new java.awt.Dimension(875, 610));
         VerPerfilLimitado.setMinimumSize(new java.awt.Dimension(875, 610));
-        VerPerfilLimitado.setPreferredSize(new java.awt.Dimension(875, 610));
 
         jPanel24.setMaximumSize(new java.awt.Dimension(875, 610));
         jPanel24.setMinimumSize(new java.awt.Dimension(875, 610));
@@ -3385,9 +3392,7 @@ public class JavaTicket extends javax.swing.JFrame {
             .addComponent(jPanel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        VerPerfilContenido.setMaximumSize(new java.awt.Dimension(875, 610));
         VerPerfilContenido.setMinimumSize(new java.awt.Dimension(875, 610));
-        VerPerfilContenido.setPreferredSize(new java.awt.Dimension(875, 610));
         VerPerfilContenido.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tablaUsuarioContenido.setBackground(new java.awt.Color(255, 255, 255));
@@ -3483,8 +3488,8 @@ public class JavaTicket extends javax.swing.JFrame {
         jLabel140.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Ver Perfil.png"))); // NOI18N
         VerPerfilContenido.getContentPane().add(jLabel140, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        EventosRealizados.setMaximumSize(new java.awt.Dimension(875, 610));
         EventosRealizados.setMinimumSize(new java.awt.Dimension(875, 610));
+        EventosRealizados.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel25.setMaximumSize(new java.awt.Dimension(875, 610));
         jPanel25.setMinimumSize(new java.awt.Dimension(875, 610));
@@ -3529,7 +3534,7 @@ public class JavaTicket extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Deportivo", "Religiosos", "Musicales", "Monto "
+                "Tipo Evento", "Cantidad", "Monto ", ""
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -3573,29 +3578,17 @@ public class JavaTicket extends javax.swing.JFrame {
         jLabel144.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Eventos Reportes.png"))); // NOI18N
         jPanel25.add(jLabel144, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        javax.swing.GroupLayout EventosRealizadosLayout = new javax.swing.GroupLayout(EventosRealizados.getContentPane());
-        EventosRealizados.getContentPane().setLayout(EventosRealizadosLayout);
-        EventosRealizadosLayout.setHorizontalGroup(
-            EventosRealizadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(EventosRealizadosLayout.createSequentialGroup()
-                .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, 875, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        EventosRealizadosLayout.setVerticalGroup(
-            EventosRealizadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(EventosRealizadosLayout.createSequentialGroup()
-                .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        EventosRealizados.getContentPane().add(jPanel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        EventosFuturos.setMaximumSize(new java.awt.Dimension(875, 610));
         EventosFuturos.setMinimumSize(new java.awt.Dimension(875, 610));
-        EventosFuturos.setPreferredSize(new java.awt.Dimension(875, 610));
 
         jPanel26.setMaximumSize(new java.awt.Dimension(875, 610));
         jPanel26.setPreferredSize(new java.awt.Dimension(875, 610));
         jPanel26.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jTable1.setBackground(new java.awt.Color(255, 255, 255));
+        jTable1.setFont(new java.awt.Font("Ebrima", 1, 12)); // NOI18N
+        jTable1.setForeground(new java.awt.Color(0, 0, 0));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -3628,6 +3621,9 @@ public class JavaTicket extends javax.swing.JFrame {
         jLabel146.setText("Estadistica");
         jPanel26.add(jLabel146, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 290, -1, -1));
 
+        jTable2.setBackground(new java.awt.Color(255, 255, 255));
+        jTable2.setFont(new java.awt.Font("Ebrima", 1, 12)); // NOI18N
+        jTable2.setForeground(new java.awt.Color(0, 0, 0));
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -3685,15 +3681,16 @@ public class JavaTicket extends javax.swing.JFrame {
             .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        EventosCancelados.setMaximumSize(new java.awt.Dimension(875, 610));
         EventosCancelados.setMinimumSize(new java.awt.Dimension(875, 610));
-        EventosCancelados.setPreferredSize(new java.awt.Dimension(875, 610));
 
         jPanel27.setMaximumSize(new java.awt.Dimension(875, 610));
         jPanel27.setMinimumSize(new java.awt.Dimension(875, 610));
         jPanel27.setPreferredSize(new java.awt.Dimension(875, 610));
         jPanel27.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jTable3.setBackground(new java.awt.Color(255, 255, 255));
+        jTable3.setFont(new java.awt.Font("Ebrima", 1, 12)); // NOI18N
+        jTable3.setForeground(new java.awt.Color(0, 0, 0));
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -3721,6 +3718,9 @@ public class JavaTicket extends javax.swing.JFrame {
 
         jPanel27.add(jScrollPane22, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 720, 200));
 
+        jTable4.setBackground(new java.awt.Color(255, 255, 255));
+        jTable4.setFont(new java.awt.Font("Ebrima", 1, 12)); // NOI18N
+        jTable4.setForeground(new java.awt.Color(0, 0, 0));
         jTable4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -3787,6 +3787,9 @@ public class JavaTicket extends javax.swing.JFrame {
 
         jPanel28.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jTable5.setBackground(new java.awt.Color(255, 255, 255));
+        jTable5.setFont(new java.awt.Font("Ebrima", 1, 12)); // NOI18N
+        jTable5.setForeground(new java.awt.Color(0, 0, 0));
         jTable5.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -3799,6 +3802,9 @@ public class JavaTicket extends javax.swing.JFrame {
 
         jPanel28.add(jScrollPane24, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 91, 450, 210));
 
+        jTable6.setBackground(new java.awt.Color(255, 255, 255));
+        jTable6.setFont(new java.awt.Font("Ebrima", 1, 12)); // NOI18N
+        jTable6.setForeground(new java.awt.Color(0, 0, 0));
         jTable6.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -4417,7 +4423,7 @@ public class JavaTicket extends javax.swing.JFrame {
             int pos = searchUserIndex(userTextField.getText());
             String equipo1 = equipo1TF.getText();
             String equipo2 = equipo2TF.getText();
-            
+            Evento evento = searchEvento(codigo);
             if (validarCodigo == false && cantidadGente <= 20000 && fechaEvento != null) {
                 if (usuarios.get(pos) instanceof UsuarioAdmin) {
                     if (tipoDeporte.equalsIgnoreCase("Futbol")) {
@@ -4455,6 +4461,7 @@ public class JavaTicket extends javax.swing.JFrame {
                     equipo1TF.setText("");
                     equipo2TF.setText("");
                     contadorDeportivos++;
+                    montoDeportivos+=montoRenta;
                 } else if (usuarios.get(pos) instanceof UsuarioContenido) {
                     if (tipoDeporte.equalsIgnoreCase("Futbol")) {
                         eventosCreados.add(new EventoDeportivo(Deportes.FUTBOL, cantidadGente, equipo1, equipo2, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
@@ -4492,6 +4499,7 @@ public class JavaTicket extends javax.swing.JFrame {
                     equipo1TF.setText("");
                     equipo2TF.setText("");
                     contadorDeportivos++;
+                    montoDeportivos+=montoRenta;
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "ELIJA UNA FECHA/MINIMO DE GENTE", "ERROR", JOptionPane.ERROR_MESSAGE);                
@@ -4576,6 +4584,7 @@ public class JavaTicket extends javax.swing.JFrame {
             String cantidadM=String.valueOf(cantidadGente);
             boolean validarCodigo = codigoUnico(codigo);
             int pos = searchUserIndex(userTextField.getText());
+            Evento evento = searchEvento(codigo);
             if (validarCodigo == false && cantidadGente <= 25000 && fechaEvento!=null) {
                 if (usuarios.get(pos) instanceof UsuarioAdmin) {
                     if (tipoMusica.equalsIgnoreCase("Pop")) {
@@ -4624,6 +4633,7 @@ public class JavaTicket extends javax.swing.JFrame {
                     musicaCB.setSelectedIndex(0);
                     fechaEventoMusical.setDate(null);
                     contadorMusicales++;
+                    montoMusicales+=montoRenta;
                 } else if (usuarios.get(pos) instanceof UsuarioContenido) {
                     if (tipoMusica.equalsIgnoreCase("Pop")) {
                         eventosCreados.add(new EventoMusical(Musica.POP, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
@@ -4671,6 +4681,7 @@ public class JavaTicket extends javax.swing.JFrame {
                     musicaCB.setSelectedIndex(0);
                     fechaEventoMusical.setDate(null);
                     contadorMusicales++;
+                    montoMusicales+=montoRenta;
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "ELIJA UNA FECHA/MINIMO DE FECHA", "ERROR", JOptionPane.ERROR_MESSAGE);                
@@ -4711,6 +4722,7 @@ public class JavaTicket extends javax.swing.JFrame {
             int cantidadGenteConvertida = 0;
             boolean validarCodigo = codigoUnico(codigo);
             int pos = searchUserIndex(userTextField.getText());
+            Evento evento = searchEvento(codigo);
             if (validarCodigo == false && cantidadGente <= 30000 && fechaEvento!=null) {
                 if (usuarios.get(pos) instanceof UsuarioAdmin) {
                     eventosCreados.add(new EventoReligioso(cantidadGente, cantidadGenteConvertida, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
@@ -4726,6 +4738,7 @@ public class JavaTicket extends javax.swing.JFrame {
                     jTextField2.setText("");
                     fechaReligioso.setDate(null);
                     contadorReligiosos++;
+                    montoReligiosos += montoRenta;
                 } else if (usuarios.get(pos) instanceof UsuarioContenido) {
                     eventosCreados.add(new EventoReligioso(cantidadGente, cantidadGenteConvertida, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
                     ((UsuarioContenido) usuarios.get(pos)).getEventosCreados().add(new EventoReligioso(cantidadGente, cantidadGenteConvertida, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
@@ -4740,6 +4753,7 @@ public class JavaTicket extends javax.swing.JFrame {
                     jTextField2.setText("");
                     fechaReligioso.setDate(null);
                     contadorReligiosos++;
+                    montoReligiosos+=montoRenta;
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "ELIJA UNA FECHA/MINIMO DE GENTE", "ERROR", JOptionPane.ERROR_MESSAGE);                
@@ -5748,10 +5762,13 @@ public class JavaTicket extends javax.swing.JFrame {
             // Decrementar el contador según el tipo de evento
             if (evento instanceof EventoDeportivo) {
                 contadorDeportivos--;
+                montoDeportivos-=evento.getMontoRenta();
             } else if (evento instanceof EventoMusical) {
                 contadorMusicales--;
+                montoMusicales-=evento.getMontoRenta();
             } else if (evento instanceof EventoReligioso) {
                 contadorReligiosos--;
+                montoReligiosos-=evento.getMontoRenta();
             }
             
             String datosCancelados = evento.datosCancelados();
@@ -5966,7 +5983,7 @@ public class JavaTicket extends javax.swing.JFrame {
                 rowData[1] = "Evento Religioso";
             }
             rowData[2] = ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().get(i).getTituloEvento();
-            rowData[3] = ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().get(i).getEventoCancelado() ? "CANCELADO" : "ACTIVO";
+            rowData[3] = ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().get(i).isCancelado() ? "CANCELADO" : "ACTIVO";
             rowData[4] = ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().get(i).getMontoRenta();
             model.addRow(rowData);
         }
@@ -6012,6 +6029,96 @@ public class JavaTicket extends javax.swing.JFrame {
         rowData[2] = ((UsuarioLimitado) usuarios.get(pos)).getPassword();
         rowData[3] = ((UsuarioLimitado) usuarios.get(pos)).getEdad();
         model.addRow(rowData);
+    }
+    
+    public void llenarTablaEventosRealizadosAdmin() {
+        DefaultTableModel modelEventos = (DefaultTableModel) tablaEventosRealizados.getModel();
+        DefaultTableModel modelEstadisticas = (DefaultTableModel) tablaEstadisticaEventosRealizados.getModel();
+
+        // Limpiar tablas antes de volver a llenarlas
+        modelEventos.setRowCount(0);
+        modelEstadisticas.setRowCount(0);
+        int pos = searchUserIndex(userTextField.getText());
+
+        for (Evento evento : ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados()) {
+            if (evento.isRealizado()) {
+                Object rowData[] = new Object[5];
+
+                rowData[0] = ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().get(evento.getCodigo());
+                rowData[1] = (evento.getTipoEvento());  // Ajusta según cómo obtienes el tipo del evento
+                rowData[2] = (evento.getTituloEvento());
+                rowData[3] = (evento.getFechaEvento());  // Ajusta según cómo obtienes la fecha del evento
+                rowData[4] = ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().get(evento.getMontoRenta());
+
+                modelEventos.addRow(rowData);
+
+                // Añadir estadísticas
+                if (evento instanceof EventoDeportivo) {
+                    contadorDeportivos++;
+                    montoDeportivos += evento.getMontoRenta();
+                } else if (evento instanceof EventoMusical) {
+                    contadorMusicales++;
+                    montoMusicales += evento.getMontoRenta();
+                } else if (evento instanceof EventoReligioso) {
+                    contadorReligiosos++;
+                    montoReligiosos += evento.getMontoRenta();
+                }
+            }
+        }
+
+        // Añadir las estadísticas a la tabla de resumen
+        Object rowDataDeportivo[] = {"Deportivo", contadorDeportivos, montoDeportivos};
+        Object rowDataMusical[] = {"Musical", contadorMusicales, montoMusicales};
+        Object rowDataReligioso[] = {"Religioso", contadorReligiosos, montoReligiosos};
+
+        modelEstadisticas.addRow(rowDataDeportivo);
+        modelEstadisticas.addRow(rowDataMusical);
+        modelEstadisticas.addRow(rowDataReligioso);
+    }
+    
+    public void llenarTablaEventosRealizadosContenido() {
+        DefaultTableModel modelEventos = (DefaultTableModel) tablaEventosRealizados.getModel();
+        DefaultTableModel modelEstadisticas = (DefaultTableModel) tablaEstadisticaEventosRealizados.getModel();
+
+        // Limpiar tablas antes de volver a llenarlas
+        modelEventos.setRowCount(0);
+        modelEstadisticas.setRowCount(0);
+        int pos = searchUserIndex(userTextField.getText());
+
+        for (Evento evento : ((UsuarioContenido) usuarios.get(pos)).getEventosCreados()) {
+            if (evento.isRealizado()) {
+                Object rowData[] = new Object[5];
+
+                rowData[0] = evento.getCodigo();
+                rowData[1] = evento.getTipoEvento();  // Ajusta según cómo obtienes el tipo del evento
+                rowData[2] = evento.getTituloEvento();
+                rowData[3] = evento.getFechaEvento();  // Ajusta según cómo obtienes la fecha del evento
+                rowData[4] = evento.getMontoRenta();
+
+                modelEventos.addRow(rowData);
+
+                // Añadir estadísticas
+                if (evento instanceof EventoDeportivo) {
+                    contadorDeportivos++;
+                    montoDeportivos += evento.getMontoRenta();
+                } else if (evento instanceof EventoMusical) {
+                    contadorMusicales++;
+                    montoMusicales += evento.getMontoRenta();
+                } else if (evento instanceof EventoReligioso) {
+                    contadorReligiosos++;
+                    montoReligiosos += evento.getMontoRenta();
+                }
+            }
+        }
+
+        // Añadir las estadísticas a la tabla de resumen
+        Object rowDataDeportivo[] = {"Deportivo", contadorDeportivos, montoDeportivos};
+        Object rowDataMusical[] = {"Musical", contadorMusicales, montoMusicales};
+        Object rowDataReligioso[] = {"Religioso", contadorReligiosos, montoReligiosos};
+
+        modelEstadisticas.addRow(rowDataDeportivo);
+        modelEstadisticas.addRow(rowDataMusical);
+        modelEstadisticas.addRow(rowDataReligioso);
     }
     
     private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
@@ -6083,6 +6190,14 @@ public class JavaTicket extends javax.swing.JFrame {
         EventosRealizados.setResizable(false);
         EventosRealizados.setLocationRelativeTo(null);
         EventosRealizados.pack();
+        int pos = searchUserIndex(userTextField.getText());
+        if (usuarios.get(pos) instanceof UsuarioAdmin) {
+            llenarTablaEventosRealizadosAdmin();
+        } else if (usuarios.get(pos) instanceof UsuarioContenido) {
+            llenarTablaEventosRealizadosContenido();
+        }
+        
+        
         Reportes.setVisible(false);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton19ActionPerformed
@@ -6785,15 +6900,27 @@ public class JavaTicket extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton56ActionPerformed
 
     private void jButton58ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton58ActionPerformed
-        // TODO add your handling code here:
+        EventosFuturos.setVisible(false);
+        Reportes.setVisible(true);
+        Reportes.setLocationRelativeTo(null);
+        Reportes.setResizable(false);
+        Reportes.pack();
     }//GEN-LAST:event_jButton58ActionPerformed
 
     private void jButton59ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton59ActionPerformed
-        // TODO add your handling code here:
+        EventosCancelados.setVisible(false); 
+        Reportes.setVisible(true);
+        Reportes.setLocationRelativeTo(null);
+        Reportes.setResizable(false);
+        Reportes.pack();
     }//GEN-LAST:event_jButton59ActionPerformed
 
     private void jButton60ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton60ActionPerformed
-        // TODO add your handling code here:
+        IngresoGeneradoPorFecha.setVisible(false); 
+        Reportes.setVisible(true);
+        Reportes.setLocationRelativeTo(null);
+        Reportes.setResizable(false);
+        Reportes.pack();
     }//GEN-LAST:event_jButton60ActionPerformed
 
     //Funcion Recursiva
@@ -6840,7 +6967,36 @@ public class JavaTicket extends javax.swing.JFrame {
         }
         return -1;
     }
-   
+    /*
+    private CategoryDataset createDataset() {
+    DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+
+    // Agrega datos al conjunto para cada tipo de evento
+    dataset.addValue(contadorDeportivos, "Cantidad", "Deportivo");
+    dataset.addValue(contadorMusicales, "Cantidad", "Musical");
+    dataset.addValue(contadorReligiosos, "Cantidad", "Religioso");
+
+    return dataset;
+}
+
+private void mostrarGrafico() {
+    JFreeChart barChart = ChartFactory.createBarChart(
+            "Cantidad de Eventos por Tipo",
+            "Tipo de Evento",
+            "Cantidad",
+            createDataset(),
+            PlotOrientation.VERTICAL,
+            true, true, false);
+
+    ChartPanel chartPanel = new ChartPanel(barChart);
+    chartPanel.setPreferredSize(new java.awt.Dimension(560, 370));
+
+    // Supongamos que "jPanelGrafico" es el JPanel donde deseas mostrar el gráfico
+    JPanel jPanelGrafico = new JPanel();
+    jPanelGrafico.setLayout(new BorderLayout());
+    jPanelGrafico.add(chartPanel, BorderLayout.CENTER);
+}
+*/
 
 
     public static void main(String args[]) {
@@ -7313,6 +7469,7 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JTextField usuarioIngresado;
     private javax.swing.JButton verEventoButton;
     // End of variables declaration//GEN-END:variables
+    private final List<Evento> eventosRealizados = new ArrayList<>();
     private final ArrayList<Evento> eventosCreados = new ArrayList();
     private final Usuario admin = new UsuarioAdmin("administrador", "prueba", "123", 20);
     private final ArrayList<Usuario> usuarios = new ArrayList();

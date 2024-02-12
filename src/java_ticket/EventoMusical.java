@@ -17,7 +17,7 @@ public class EventoMusical extends Evento {
     /*Arraylist de los nombres de las personas que conforman la banda musical*/
 
     public EventoMusical(Musica tipoMusica, int cantidadGente,int codigo, String tituloEvento, String descripcion, Date fechaEvento, int montoRenta) {
-        super(codigo, tituloEvento, descripcion, fechaEvento, montoRenta);
+        super(codigo, tituloEvento, TipoEvento.MUSICAL ,descripcion, fechaEvento, montoRenta);
         this.tipoMusica = tipoMusica;
         this.cantidadGente = cantidadGente;
         this.seguro = 0.3*montoRenta;

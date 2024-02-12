@@ -28,6 +28,19 @@ public class SistemaEventos {
 
         return eventosRealizados;
     }
+    
+    public List<Evento> obtenerEventosRealizadosPorTipo(TipoEvento tipoEvento) {
+        List<Evento> eventosRealizados = new ArrayList<>();
+        Date fechaActual = new Date();
+
+        for (Evento evento : eventosCreados) {
+            if (evento.getFechaEvento().before(fechaActual) && evento.getTipoEvento() == tipoEvento) {
+                eventosRealizados.add(evento);
+            }
+        }
+
+        return eventosRealizados;
+    }
 
     // Método para listar eventos realizados y mostrar estadísticas
     public void listarEventosRealizados() {
