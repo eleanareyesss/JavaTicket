@@ -20,6 +20,23 @@ public class UsuarioContenido extends Usuario
         this.eventosCreados = eventosCreados;
     }
 
+    public Evento esCreador(int codigo) {
+        return esCreador(codigo, 0);
+    }
+    
+    private Evento esCreador(int codigo, int index) {
+        if (index < eventosCreados.size()) {
+            Evento evento = eventosCreados.get(index);
+            
+            if (evento != null && evento.getCodigo() == codigo) {
+                return evento;
+            }
+            
+            return esCreador(codigo, index + 1);
+        }
+        return null;
+    }
+    
     @Override
     public String toString() {
         return "UsuarioContenido{" + "eventosCreados=" + eventosCreados + super.toString()+"}";

@@ -1,4 +1,3 @@
-
 package java_ticket;
 
 import java.text.SimpleDateFormat;
@@ -6,18 +5,17 @@ import java.util.Calendar;
 import java.util.Date;
 import javax.swing.JOptionPane;
 
-public  class Evento 
-{
+public class Evento {
+
     protected int codigo;//el codigo de cada evento es unico
     protected String tituloEvento;
     protected String descripcion;
     protected Date fechaEvento;
     protected int montoRenta;//renta del estadio
-    protected boolean eventoCancelado;
-    protected boolean cancelado=false;
+    protected boolean eventoCancelado = false;
     protected double multaEvento;
     protected TipoEvento tipoEvento;
-    protected boolean realizado;
+    protected boolean realizado=false;
     //todas se ingresan desde el teclado
 
     public Evento(int codigo, String tituloEvento, TipoEvento tipoEvento, String descripcion, Date fechaEvento, int montoRenta) {
@@ -27,7 +25,6 @@ public  class Evento
         this.descripcion = descripcion;
         this.fechaEvento = fechaEvento;
         this.montoRenta = montoRenta;
-        this.eventoCancelado = false;
         this.multaEvento = 0;
     }
 
@@ -50,7 +47,7 @@ public  class Evento
     public TipoEvento getTipoEvento() {
         return tipoEvento;
     }
-    
+
     public String getDescripcion() {
         return descripcion;
     }
@@ -75,16 +72,12 @@ public  class Evento
         this.montoRenta = montoRenta;
     }
 
-    public boolean isEventoCancelado() {
-        return eventoCancelado;
-    }
-
     public void setEventoCancelado(boolean eventoCancelado) {
         this.eventoCancelado = eventoCancelado;
     }
-    
+
     public boolean isCancelado() {
-        return this.cancelado;
+        return this.eventoCancelado;
     }
 
     public boolean isRealizado() {
@@ -95,6 +88,13 @@ public  class Evento
         this.realizado = realizado;
     }
     
+    public void verificarRealizado() {
+        Date hoy = new Date();
+        if (fechaEvento != null && !fechaEvento.after(hoy)) {
+            setRealizado(true);
+        }
+    }
+    
     public double getMultaEvento() {
         return multaEvento;
     }
@@ -102,7 +102,7 @@ public  class Evento
     public void setMultaEvento(double multaEvento) {
         this.multaEvento = multaEvento;
     }
-    
+
     public void cancelarEvento() {
         Calendar hoy = Calendar.getInstance();
         Calendar unDiaAntesEvento = Calendar.getInstance();
@@ -110,23 +110,12 @@ public  class Evento
         unDiaAntesEvento.add(Calendar.DATE, -1);
 
         if (hoy.before(unDiaAntesEvento)) {
-            eventoCancelado = true;
-            
             multaEvento = 0;
         } else {
-            eventoCancelado = true;
-            
             multaEvento = montoRenta * 0.5;
         }
     }
 
-    public boolean setEventoCancelado(){
-        return cancelado==false;
-    }
-    public boolean getEventoCancelado() {
-        return cancelado==true;
-    }
-    
     public String datosCancelados() {
         if (eventoCancelado) {
             return "Estado: Cancelado, Multa: Lps." + multaEvento;
@@ -134,12 +123,9 @@ public  class Evento
         return "El evento no está cancelado";
     }
 
-    
-    
     @Override
     public String toString() {
-        return "{" + " codigo=" + codigo + ", tituloEvento=" + tituloEvento + ", descripcion=" + descripcion + ", fechaEvento=" + fechaEvento + ", montoRenta=" + montoRenta +"Estado"+eventoCancelado+'}';
+        return "{" + " codigo=" + codigo + ", tituloEvento=" + tituloEvento + ", descripcion=" + descripcion + ", fechaEvento=" + fechaEvento + ", montoRenta=" + montoRenta + "Estado" + eventoCancelado + '}';
     }
-    
-    
+
 }

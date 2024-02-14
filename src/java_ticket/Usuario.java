@@ -1,5 +1,6 @@
 
 package java_ticket;
+import java_ticket.Evento;
 
 public abstract class Usuario 
 {
@@ -8,6 +9,7 @@ protected String nombreCompleto;
 protected String username;//no se puede repetir
 protected String password;
 protected int edad;
+protected Evento eventosCreados;
 
     public Usuario(String nombreCompleto, String username, String password, int edad) {
         this.nombreCompleto = nombreCompleto;
@@ -15,7 +17,7 @@ protected int edad;
         this.password = password;
         this.edad = edad;
     }
-
+    
     public String getNombreCompleto() {
         return nombreCompleto;
     }
@@ -47,7 +49,7 @@ protected int edad;
     public void setEdad(int edad) {
         this.edad = edad;
     }
-
+       
     @Override
     public String toString() {
         return   "nombreCompleto=" + nombreCompleto
